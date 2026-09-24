@@ -1,0 +1,74 @@
+{
+  "tests": [
+    {
+      "name": "text_to_image_smoke",
+      "input": {
+        "prompt": "A red cube on a white table, studio photograph",
+        "width": 512,
+        "height": 512,
+        "num_inference_steps": 4,
+        "seed": 42,
+        "output_format": "jpeg"
+      },
+      "timeout": 1800000
+    },
+    {
+      "name": "transparent_png_smoke",
+      "input": {
+        "prompt": "A red glass cube",
+        "width": 512,
+        "height": 512,
+        "num_inference_steps": 4,
+        "seed": 42,
+        "output_format": "png",
+        "transparent": true
+      },
+      "timeout": 1800000
+    },
+    {
+      "name": "reference_edit_smoke",
+      "input": {
+        "prompt": "Change the red square to blue.",
+        "width": 512,
+        "height": 512,
+        "num_inference_steps": 4,
+        "seed": 42,
+        "output_format": "jpeg",
+        "images": [
+          "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAOklEQVR4nO3RQREAQAjDwHJC8C8FWSchfPhlBZSZUNOdS+90PR5Y8AfIRMhEyETIRMhEyETIRMhEIR/gBQFERyvVpAAAAABJRU5ErkJggg=="
+        ],
+        "output_resolution": 512
+      },
+      "timeout": 1800000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA A100-SXM4-80GB",
+    "gpuCount": 1,
+    "env": [
+      {
+        "key": "MODEL_ID",
+        "value": "Qwen/Qwen-Image-2.1"
+      },
+      {
+        "key": "MODEL_REVISION",
+        "value": "790c92633540aa0cb11d9abf19eb46d861714758"
+      },
+      {
+        "key": "CPU_OFFLOAD",
+        "value": "none"
+      },
+      {
+        "key": "VAE_TILING",
+        "value": "true"
+      }
+    ],
+    "allowedCudaVersions": [
+      "12.8",
+      "12.9",
+      "13.0",
+      "13.1",
+      "13.2"
+    ]
+  }
+}

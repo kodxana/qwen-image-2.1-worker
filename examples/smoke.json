@@ -1,0 +1,10 @@
+{
+  "input": {
+    "prompt": "A red cube on a white table, studio photograph",
+    "width": 512,
+    "height": 512,
+    "num_inference_steps": 4,
+    "seed": 42,
+    "output_format": "jpeg"
+  }
+}

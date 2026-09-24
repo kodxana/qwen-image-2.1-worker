@@ -1,0 +1,11 @@
+**
+!handler.py
+!requirements.txt
+!qwen_worker/
+!qwen_worker/*.py
+!scripts/
+!scripts/check_runtime.py
+!scripts/download_model.py
+!examples/
+!examples/*.json
+

@@ -1,0 +1,75 @@
+{
+  "title": "Qwen-Image-2.1",
+  "description": "Generate, edit, and create transparent images with Qwen-Image-2.1 using a native Diffusers queue worker.",
+  "type": "serverless",
+  "category": "image",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 60,
+    "gpuCount": 1,
+    "gpuIds": "AMPERE_80",
+    "allowedCudaVersions": [
+      "12.8",
+      "12.9",
+      "13.0",
+      "13.1",
+      "13.2"
+    ],
+    "env": [
+      {
+        "key": "MODEL_ID",
+        "value": "Qwen/Qwen-Image-2.1"
+      },
+      {
+        "key": "MODEL_REVISION",
+        "value": "790c92633540aa0cb11d9abf19eb46d861714758"
+      },
+      {
+        "key": "CPU_OFFLOAD",
+        "input": {
+          "name": "CPU offloading",
+          "type": "string",
+          "description": "Trade GPU memory for slower inference. Start with none on the default 80 GB GPU.",
+          "default": "none",
+          "advanced": true,
+          "options": [
+            {
+              "label": "Disabled",
+              "value": "none"
+            },
+            {
+              "label": "Model offload",
+              "value": "model"
+            },
+            {
+              "label": "Sequential offload",
+              "value": "sequential"
+            }
+          ]
+        }
+      },
+      {
+        "key": "VAE_TILING",
+        "input": {
+          "name": "VAE tiling",
+          "type": "boolean",
+          "description": "Reduce decoding memory for large images.",
+          "default": true,
+          "trueValue": "true",
+          "falseValue": "false",
+          "advanced": true
+        }
+      },
+      {
+        "key": "HF_TOKEN",
+        "input": {
+          "name": "Hugging Face token (optional)",
+          "type": "string",
+          "description": "Optional download authentication. Leave empty for public access.",
+          "default": "",
+          "advanced": true
+        }
+      }
+    ]
+  }
+}

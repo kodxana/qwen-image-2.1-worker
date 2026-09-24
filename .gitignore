@@ -1,0 +1,35 @@
+.local-dev/
+# Local environments and caches
+.venv/
+venv/
+.build/
+build/
+dist/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Generated output, downloads, and archives
+outputs/
+models/
+*.safetensors
+*.ckpt
+*.log
+*.tar
+*.tar.gz
+*.zip
+.DS_Store
+Thumbs.db
