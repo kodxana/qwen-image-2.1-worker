@@ -1,4 +1,5 @@
 # Qwen-Image-2.1 Runpod worker
+[![Runpod](https://api.runpod.io/badge/kodxana/qwen-image-2.1-worker)](https://console.runpod.io/hub/listing/kodxana/qwen-image-2.1-worker)
 
 A queue-based Runpod Serverless worker for **Qwen/Qwen-Image-2.1**. It loads one BF16
 pipeline before accepting jobs and reuses it for text-to-image generation, image
