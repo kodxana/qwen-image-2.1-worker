@@ -43,9 +43,12 @@ def decode_images(values: tuple[str, ...]) -> list[Image.Image]:
                     oriented = ImageOps.exif_transpose(image)
                     has_alpha = "A" in oriented.getbands() or "transparency" in oriented.info
                     images.append(oriented.convert("RGBA" if has_alpha else "RGB"))
+        except InputError:
+            raise
         except (
             UnidentifiedImageError,
             OSError,
+            ValueError,
             Image.DecompressionBombError,
             Image.DecompressionBombWarning,
         ) as exc:
@@ -53,19 +56,23 @@ def decode_images(values: tuple[str, ...]) -> list[Image.Image]:
     return images
 
 
-def encode_image(image: Image.Image, output_format: str, quality: int, seed: int) -> dict:
+def encode_image(image: Image.Image, output_format: str, quality: int, seed: int,
+                 *, optimize: bool = False, lossy: bool = False) -> dict:
     image = image.copy()
+    image.info.clear()  # Transport bounds exclude source EXIF/ICC/text metadata.
     buffer = io.BytesIO()
     if output_format == "jpeg":
         if "A" in image.getbands():
             background = Image.new("RGB", image.size, "white")
             background.paste(image, mask=image.getchannel("A"))
             image = background
-        image.convert("RGB").save(buffer, format="JPEG", quality=quality)
+        image.convert("RGB").save(buffer, format="JPEG", quality=quality, optimize=optimize)
     elif output_format == "webp":
-        image.save(buffer, format="WEBP", quality=quality, lossless="A" in image.getbands())
+        image.save(buffer, format="WEBP", quality=quality,
+                   lossless="A" in image.getbands() and not lossy,
+                   method=6 if optimize and not lossy else 4, exact=True)
     else:
-        image.save(buffer, format="PNG")
+        image.save(buffer, format="PNG", optimize=optimize, compress_level=9 if optimize else 6)
     return {
         "image_base64": base64.b64encode(buffer.getvalue()).decode("ascii"),
         "mime_type": f"image/{output_format}",

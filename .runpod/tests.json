@@ -6,7 +6,7 @@
         "prompt": "A red cube on a white table, studio photograph",
         "width": 512,
         "height": 512,
-        "num_inference_steps": 4,
+        "num_inference_steps": 8,
         "seed": 42,
         "output_format": "jpeg"
       },
@@ -18,7 +18,7 @@
         "prompt": "A red glass cube",
         "width": 512,
         "height": 512,
-        "num_inference_steps": 4,
+        "num_inference_steps": 8,
         "seed": 42,
         "output_format": "png",
         "transparent": true
@@ -31,7 +31,7 @@
         "prompt": "Change the red square to blue.",
         "width": 512,
         "height": 512,
-        "num_inference_steps": 4,
+        "num_inference_steps": 8,
         "seed": 42,
         "output_format": "jpeg",
         "images": [
@@ -47,16 +47,12 @@
     "gpuCount": 1,
     "env": [
       {
-        "key": "MODEL_ID",
-        "value": "Qwen/Qwen-Image-2.1"
-      },
-      {
-        "key": "MODEL_REVISION",
-        "value": "790c92633540aa0cb11d9abf19eb46d861714758"
+        "key": "QWEN_HUB_TEST_PROVISION",
+        "value": "true"
       },
       {
         "key": "CPU_OFFLOAD",
-        "value": "none"
+        "value": "text_encoder"
       },
       {
         "key": "VAE_TILING",

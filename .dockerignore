@@ -6,6 +6,16 @@
 !scripts/
 !scripts/check_runtime.py
 !scripts/download_model.py
+!scripts/client.py
+!scripts/benchmark_vram.py
+!scripts/vram_matrix.py
+!scripts/check_preflight.py
 !examples/
 !examples/*.json
+!docs/
+!docs/*.md
+!docs/*.json
+!docs/vram/
+!docs/vram/*.json
+!docs/vram/*.csv
 

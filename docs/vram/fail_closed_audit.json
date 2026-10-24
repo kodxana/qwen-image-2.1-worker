@@ -1,0 +1,53 @@
+{
+  "kind": "CPU audit; no model execution or paid RunPod jobs",
+  "pillow_version": "12.3.0",
+  "python_version": "3.10.11",
+  "probes": {
+    "oversized_png_metadata": {
+      "base64_characters": 2860,
+      "error": "Inference error: Decompressed data too large for PngImagePlugin.MAX_TEXT_CHUNK",
+      "refresh_worker": true,
+      "pipeline_calls": 0
+    },
+    "unpaired_unicode_surrogate": {
+      "error": "Inference error: 'utf-8' codec can't encode character '\\ud800' in position 0: surrogates not allowed",
+      "refresh_worker": true,
+      "pipeline_calls": 0
+    },
+    "invalid_base64_control": {
+      "error": "Reference image contains invalid base64",
+      "refresh_worker": false,
+      "pipeline_calls": 0
+    },
+    "late_png_output_rejection": {
+      "error": "Encoded images exceed the inline output limit. Use fewer images, smaller dimensions, or JPEG when transparency is not required.",
+      "refresh_worker": false,
+      "pipeline_calls": 1
+    },
+    "memory_guard_control": {
+      "error": "Request needs an estimated 83.1 GiB for conditioning tensors but only 49.0 GiB is available after model placement. Use fewer references, smaller dimensions/output_resolution, a shorter prompt, or a GPU/offload configuration with more headroom.",
+      "refresh_worker": false,
+      "pipeline_calls": 0
+    },
+    "docker_vram_tool_payload": {
+      "method": "CPU simulation of Docker COPY payload, not a Docker build",
+      "exit_code": 1,
+      "missing_fixture": true
+    },
+    "readonly_cache_initialization": {
+      "error_type": "PermissionError",
+      "error": "Read-only HF_HOME",
+      "fallback_reached": false
+    },
+    "admitted_long_prompt_rope": {
+      "prompt_characters": 19999,
+      "retained_token_positions": 10008,
+      "matrix_tokenizer_layouts_verified": 12,
+      "request_parser_accepts": true,
+      "ideal_80gib_memory_guard_accepts": true,
+      "source_sha256": "0eb0555e21ca93195e1fe9389113cafbf0e8822f6454c3001cebb3d21521ebd7",
+      "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "source_forward_error": "index 9216 is out of bounds for dimension 0 with size 9216"
+    }
+  }
+}

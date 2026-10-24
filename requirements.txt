@@ -1,7 +1,7 @@
 # PyTorch/CUDA are provided by the base image; these pins prevent accidental replacement.
 torch==2.8.0
 torchvision==0.23.0
-diffusers @ git+https://github.com/huggingface/diffusers.git@e0118ade2f60234c41bacf40330a7e2f61108849
+diffusers @ git+https://github.com/huggingface/diffusers.git@da1d3829cf08d4f329b526d89e17cc035c049d8d
 transformers==5.17.0
 accelerate==1.15.0
 huggingface-hub==1.32.0

@@ -1,0 +1,153 @@
+{
+  "kind": "CPU processor/RoPE verification; no model weights or GPU inference",
+  "processor": "Qwen3VLProcessor",
+  "image_processor": "Qwen2VLImageProcessor",
+  "verified_layouts": [
+    {
+      "resolution": 1024,
+      "references": 1,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 8229
+    },
+    {
+      "resolution": 1024,
+      "references": 1,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 8207
+    },
+    {
+      "resolution": 1024,
+      "references": 4,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 20535
+    },
+    {
+      "resolution": 1024,
+      "references": 4,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 20513
+    },
+    {
+      "resolution": 1024,
+      "references": 10,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 45148
+    },
+    {
+      "resolution": 1024,
+      "references": 10,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 45126
+    },
+    {
+      "resolution": 2048,
+      "references": 1,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 32805
+    },
+    {
+      "resolution": 2048,
+      "references": 1,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 32783
+    },
+    {
+      "resolution": 2048,
+      "references": 4,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 81975
+    },
+    {
+      "resolution": 2048,
+      "references": 4,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 81953
+    },
+    {
+      "resolution": 2048,
+      "references": 10,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 180316
+    },
+    {
+      "resolution": 2048,
+      "references": 10,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 180294
+    },
+    {
+      "resolution": 512,
+      "references": 2,
+      "branch": "positive",
+      "transparent": true,
+      "position_count": 3110
+    },
+    {
+      "resolution": 512,
+      "references": 2,
+      "branch": "negative",
+      "transparent": true,
+      "position_count": 3069
+    },
+    {
+      "resolution": 1024,
+      "references": 1,
+      "branch": "positive",
+      "transparent": false,
+      "position_count": 7973
+    },
+    {
+      "resolution": 1024,
+      "references": 1,
+      "branch": "negative",
+      "transparent": false,
+      "position_count": 7951
+    },
+    {
+      "resolution": 2048,
+      "references": 1,
+      "branch": "positive",
+      "transparent": true,
+      "position_count": 31800
+    },
+    {
+      "resolution": 2048,
+      "references": 1,
+      "branch": "negative",
+      "transparent": true,
+      "position_count": 31759
+    },
+    {
+      "resolution": 1024,
+      "references": 0,
+      "branch": "positive",
+      "transparent": true,
+      "position_count": 4146
+    },
+    {
+      "resolution": 1024,
+      "references": 0,
+      "branch": "negative",
+      "transparent": true,
+      "position_count": 4105
+    }
+  ],
+  "long_prompt_rejected": true,
+  "long_negative_prompt_rejected": true,
+  "boundary_cases": 4,
+  "upstream_index_comparisons": 200,
+  "metadata_free_rgba_output_verified": true,
+  "reference_resize_comparisons": 1000
+}

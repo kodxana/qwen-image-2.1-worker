@@ -33,3 +33,7 @@ models/
 *.zip
 .DS_Store
 Thumbs.db
+
+# Backup and reference folders
+*original*
+qwen-image-2.1-worker-v.0.0.1original/
